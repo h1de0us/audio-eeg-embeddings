@@ -1,0 +1,33 @@
+model:
+  audio_dim: 512  # Dimension of audio embeddings
+  eeg_dim: 512    # Dimension of EEG embeddings
+  shared_dim: 256 # Dimension of shared space
+  eeg_encoder:
+    use_positional_encoding: true
+    in_channels: 1
+    base_channels: 32
+    embedding_dim: 512
+    sequence_length: 40
+    kernel_sizes: [3, 3, 3, 3, 3]
+    strides: [2, 2, 2, 2, 2]
+    dilations: [1, 1, 1, 1, 1]
+  audio_encoder:
+    pretrained: true
+    sample_rate: 24000
+    embedding_dim: 512
+    sequence_length: 40
+
+training:
+  batch_size: 32
+  num_workers: 4
+  learning_rate: 0.001
+  num_epochs: 100
+  patience: 10    # Early stopping patience
+  lambda1: 1.0    # Weight for alignment loss
+  lambda2: 1.0    # Weight for reconstruction loss
+  alignment_loss_type: "cosine"
+  reconstruction_loss_type: "mse"
+  checkpoint_dir: "checkpoints"
+
+data:
+  data_dir: "data/processed" 

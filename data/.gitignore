@@ -1,0 +1,16 @@
+# Ignore all files in raw and processed directories
+raw/*
+processed/*
+
+# But keep the .gitkeep files
+!raw/*/.gitkeep
+!processed/*/.gitkeep
+
+# Ignore large files
+*.wav
+*.pt
+*.npy
+*.h5
+
+# Keep documentation
+!README.md 
