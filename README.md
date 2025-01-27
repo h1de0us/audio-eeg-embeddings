@@ -69,9 +69,11 @@ project_root/
 
 ## Citations
 
+```
 @article{ji2024wavtokenizer,
   title={Wavtokenizer: an efficient acoustic discrete codec tokenizer for audio language modeling},
   author={Ji, Shengpeng and Jiang, Ziyue and Wang, Wen and Chen, Yifu and Fang, Minghui and Zuo, Jialong and Yang, Qian and Cheng, Xize and Wang, Zehan and Li, Ruiqi and others},
   journal={arXiv preprint arXiv:2408.16532},
   year={2024}
 }
+```
