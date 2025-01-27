@@ -32,6 +32,7 @@ We take a pretrained encoder for audio data (encoder A) and train an encoder for
 
 ## Project Structure
 
+```
 project_root/
 ├── configs/
 │   ├── model_config.yaml        # Configuration for model architectures
@@ -64,6 +65,7 @@ project_root/
 ├── evaluate.py                 # Evaluation script
 ├── requirements.txt            # Project dependencies
 └── README.md                   # Project documentation
+```
 
 ## Citations
 
