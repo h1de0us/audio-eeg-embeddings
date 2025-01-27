@@ -13,8 +13,8 @@ We take a pretrained encoder for audio data (encoder A) and train an encoder for
 - we want  $Z_A$   and $Z_B$  to be as similar as possible in the shared space, so we use a loss function that minimises the distance between  $Z_A$  and $Z_B$  ($\text{Loss}_{align}$).
 - to predict  $E_A$   from  $E_B$ , (audio from EEG), we need an additional layer or network $P$, for instance, a GAN-like architecture
 - $P(Z_B) \rightarrow \hat{E_A}$ , where  $\hat{E_A}$  is the predicted version of  $E_A$ ,
-- then we train $P$ to minimise the difference between the predicted embedding  $\hat{E_A}$  and the actual embedding  $E_A$ :  $\text{Loss}_{rec} = \frac{1}{N} \sum_{i=1}^{N} ||\hat{E_A} - E_A||^2$  (**Note**: Loss_rec may be more complicated as in HifiGAN of similar models, here we can try different approaches)
-- $\text{total loss} = \lambda_1 \cdot \text{Loss}_{align} + \lambda_2 \cdot \text{Loss}_{rec}$
+- then we train $P$ to minimise the difference between the predicted embedding  $\hat{E_A}$  and the actual embedding $E_A$: $\text{Loss}{align}$  $= \frac{1}{N} \sum_{i=1}^{N} ||\hat{E_A} - E_A||^2$  (**Note**: Loss_rec may be more complicated as in HifiGAN of similar models, here we can try different approaches)
+- $\text{total loss} = \lambda_1 \cdot \text{Loss}{align} + \lambda_2 \cdot \text{Loss}_{rec}$
 - $M_A, M_B$  and the predictor  $P$ are trained simultaneously on [NMED dataset](https://exhibits.stanford.edu/data/catalog/jn859kj8079)
 
 ### Summary about mapping:
